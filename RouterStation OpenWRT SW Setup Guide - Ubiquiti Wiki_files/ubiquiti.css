@@ -1,0 +1,179 @@
+
+
+
+
+
+/*
+     FILE ARCHIVED ON 11:29:22 Nov 3, 2011 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 16:08:49 Oct 14, 2016.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+*/
+body, td, th, input, textarea { font-family: Verdana; font-size: 11px; }
+
+body {
+	background: #dbdbdb url(/web/20111103112922/http://www.ubnt.com/media/ui/gradient-background.gif) top repeat-x;
+	color: #666;
+}
+
+a:link { text-decoration: none; color : #336699; border: 0px; -moz-outline-style: none;}
+a:active { text-decoration: underline; color : #336699; border: 0px; -moz-outline-style: none;}
+a:visited { text-decoration: none; color : #336699; border: 0px; -moz-outline-style: none;}
+a:hover	{ text-decoration: underline; color : #003366; border: 0px; -moz-outline-style: none;} 
+a:focus { outline: none;-moz-outline-style: none;}
+
+h1, h2, h3 { font-family: Arial, Helvetica, sans-serif;}
+
+div.gumax-page {
+	background: #ffffff;
+	position: relative;
+	padding: 20px 20px;
+}
+
+#gumax-wrapper {
+	width: 960px;
+}
+
+#WikiHeader {
+	padding-top: 15px;
+}
+
+h1#WikiLogo a {
+	width: 182px; height: 55px;
+	text-indent: -9999px; text-decoration: none; display: block;
+	background: url(/web/20111103112922/http://www.ubnt.com/media/ui/wiki-logo.png) top left no-repeat;
+}
+
+h1#WikiLogo {
+	margin: 0px;
+	padding: 0px;
+	border: none;
+}
+
+
+div#gumax-article-picture, div#gumax-article-picture a {
+	width: 734px !important;
+	height: 138px !important;
+	padding: 0px !important;
+
+}
+
+pre {
+	white-space: pre-wrap;       /* css-3 */
+	white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	white-space: -pre-wrap;      /* Opera 4-6 */
+	white-space: -o-pre-wrap;    /* Opera 7 */
+	word-wrap: break-word;       /* Internet Explorer 5.5+ */
+}
+
+/* Start Main Navigation */
+#MainNavigation {
+	position: absolute;
+	top: 62px; right: 10px;
+}
+
+#MainNavigation h5 { display: none; }
+#MainNavigation ul li { 
+	font-size: 11px; font-weight: bold;
+	list-style: none; 
+	display: inline; 
+	border-left: 1px solid #666; 
+	padding: 0px 10px 0px 15px; margin: 0px; 
+}
+#MainNavigation ul li.first {
+	border-left: none;
+}
+
+
+/* End Main Navigation */
+
+#Search {
+	background: #f1f3f3;
+	display: block;
+	padding: 10px;
+	margin: 20px 0px;
+}
+
+#Search h5 { font-size: 14px; margin: 0px; padding: 5px 0px 5px 0px; border-bottom: none; font-weight: bold; letter-spacing: -1px; color: #666666; }
+#Search form { margin: 0px; padding: 0px; background: none; border: none; }
+#Search fieldset { padding: 0px; margin: 0px; border: none; }
+#Search select { padding: 1px; font-size: 11px; color: #333;}
+#Search input.Button { border: solid 1px #ccc; padding: 2px 5px; font-size: 10px; color: #333; font-weight: bold; background: #fff;}
+#Search p { padding: 5px 0px; margin: 0px;}
+#Search .SearchTop{ background: #f1f3f3; width: 386px; height: 4px; left: 0px; top: 0px; position: absolute;}
+
+#gumax-p-login { top: 20px; right: 20px; padding: 0px; margin: 0px; color: #666; font-size: 10px; font-weight: bold; }
+#gumax-p-login ul li { border-right: 1px solid #666; }
+#gumax-p-login ul li.last { border-right: none; }
+#gumax-p-login a { color: #666; text-decoration: underline;}
+#gumax-p-login a:visited { color: #666; text-decoration: underline;}
+#gumax-p-login a:hover { color: #666; text-decoration: underline;} 
+
+.gumax-firstHeading {
+	color: #666 !important;
+}
+
+#content {
+	padding: 0px;
+}
+
+table#toc {
+}
+
+table#toc tr td {
+	padding: 15px;
+}
+
+#gumax-content-actions {
+	padding: 0px; margin: 0px;
+}
+
+#gumax-content-actions ul {
+	border-bottom: 1px solid #999999;
+	padding: 2px 0px; margin: 0px;
+}
+
+div#gumax-content-actions ul li {
+	border: 1px solid #999999;
+	padding: 5px 5px 4px 5px; margin: 0px;
+	background: #f1f3f3;
+}
+
+div#gumax-content-actions ul li a {
+	background: none !important;
+	font-family: Verdana;
+	border-bottom: 1px solid #999999;
+}
+
+div#gumax-content-actions ul li.selected {
+	background: #ffffff;
+	border-bottom: none !important;
+	padding: 5px 5px 5px 5px;
+}
+
+div#gumax-content-actions ul li.selected a {
+	color: #666;
+}
+
+div#gumax-content-actions ul li a {
+	color: #336699;
+}
+
+
+div#gumax-content-actions ul li a:hover	{ text-decoration: underline; color : #003366; border: 0px; -moz-outline-style: none;} 
+
+div#gumax-content-actions ul li.selected a, div#gumax-content-actions ul li a {
+	border: none;
+}
+
+div#gumax-content-actions div.gumax-message {
+	margin-top: 10px;
+}
+
+/* Start - Search Results */
+div.searchresult {
+	width: auto !important;
+}
+/* End - Search Results */

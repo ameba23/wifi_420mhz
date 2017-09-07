@@ -1,0 +1,930 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" dir="ltr" lang="en"><head>
+
+
+<script type="text/javascript" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/analytics.js"></script>
+<script type="text/javascript">archive_analytics.values.server_name="wwwb-app8.us.archive.org";archive_analytics.values.server_ms=101;</script>
+<link type="text/css" rel="stylesheet" href="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/banner-styles.css">
+
+
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+		<meta name="generator" content="MediaWiki 1.15.1">
+		<meta name="keywords" content="RouterStation OpenWRT SW Setup Guide,RouterStation,RouterStationChallenge,RouterStation Pro">
+		<link rel="shortcut icon" href="https://web.archive.org/web/20111010195131im_/http://www.ubnt.com/favicon.ico">
+		<link rel="search" type="application/opensearchdescription+xml" href="https://web.archive.org/w/opensearch_desc.php" title="Ubiquiti Wiki (en)">
+		<link rel="alternate" type="application/rss+xml" title="Ubiquiti Wiki RSS Feed" href="https://web.archive.org/w/index.php?title=Special:RecentChanges&amp;feed=rss">
+		<link rel="alternate" type="application/atom+xml" title="Ubiquiti Wiki Atom Feed" href="https://web.archive.org/w/index.php?title=Special:RecentChanges&amp;feed=atom">
+		<title>RouterStation OpenWRT SW Setup Guide - Ubiquiti Wiki</title>
+		<link rel="stylesheet" href="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/shared.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/commonPrint.css" type="text/css" media="print">
+		<link rel="stylesheet" href="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/gumax_main.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/ubiquiti.css" type="text/css" media="screen">
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/w/skins/gumax/IE50Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/w/skins/gumax/IE55Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/w/skins/gumax/IE60Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/w/skins/gumax/IE70Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/gumax_print.css" type="text/css" media="print">
+		<link rel="stylesheet" href="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/index_004.css" type="text/css">
+		<link rel="stylesheet" href="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/index_002.css" type="text/css" media="print">
+		<link rel="stylesheet" href="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/index.css" type="text/css">
+		<link rel="stylesheet" href="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/index_003.css" type="text/css">
+		<!--[if lt IE 7]><script type="text/javascript" src="/w/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type="text/javascript">/*<![CDATA[*/
+		var skin = "gumax";
+		var stylepath = "/w/skins";
+		var wgArticlePath = "/wiki/$1";
+		var wgScriptPath = "/w";
+		var wgScript = "/w/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "/web/20111010195131/http://www.ubnt.com";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "RouterStation_OpenWRT_SW_Setup_Guide";
+		var wgTitle = "RouterStation OpenWRT SW Setup Guide";
+		var wgAction = "view";
+		var wgArticleId = "133";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 1786;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = [];
+		var wgRestrictionMove = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/wikibits.js"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/ajax.js"></script>
+		<script type="text/javascript" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/index.php"><!-- site js --></script>
+
+
+		<!-- gumax customized style -->
+
+					<style type="text/css">
+				#gumax-content-actions li#ca-talk,
+				#gumax-content-actions li#ca-history,
+				#gumax-content-actions li#ca-edit,
+				#gumax-personal-tools
+				{ display: none; }
+			</style>
+		
+		<!--[if lt IE 7]>
+			<script type="text/javascript" src="/w/skins/gumax/js/ieunitpngfix-tag.js"></script>
+		<![endif]-->
+
+		<!-- end of gumax customized style -->
+<style type="text/css">
+:root #content > #center > .dose > .dosesingle,
+:root #content > #right > .dose > .dosesingle
+{ display: none !important; }</style></head>
+
+
+<body class="mediawiki ltr ns-0 ns-subject page-RouterStation_OpenWRT_SW_Setup_Guide skin-gumax"><div id="wm-ipp" style="display: block;" lang="en">
+
+<div style="position:fixed;left:0;top:0;width:100%!important">
+<div id="wm-ipp-inside">
+   <table style="width:100%;"><tbody><tr>
+   <td id="wm-logo">
+       <a href="https://web.archive.org/web/" title="Wayback Machine home page"><img src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/wayback-toolbar-logo.png" alt="Wayback Machine" border="0" height="39" width="110"></a>
+   </td>
+   <td class="c">
+       <table style="margin:0 auto;"><tbody><tr>
+       <td class="u" colspan="2">
+       <form target="_top" method="get" action="/web/form-submit.jsp" name="wmtb" id="wmtb"><input name="url" id="wmtbURL" value="http://www.ubnt.com/wiki/RouterStation_OpenWRT_SW_Setup_Guide" style="width:400px;" onfocus="this.focus();this.select();" type="text"><input name="type" value="replay" type="hidden"><input name="date" value="20111010195131" type="hidden"><input value="Go" type="submit"><span id="wm_tb_options" style="display:block;"></span></form>
+       </td>
+       <td class="n" rowspan="2">
+           <table><tbody>
+           <!-- NEXT/PREV MONTH NAV AND MONTH INDICATOR -->
+           <tr class="m">
+           	<td class="b" nowrap="nowrap">
+		
+		    <a href="https://web.archive.org/web/20110904072407/http://www.ubnt.com/wiki/RouterStation_OpenWRT_SW_Setup_Guide" title="4 Sep 2011">SEP</a>
+		
+		</td>
+		<td class="c" id="displayMonthEl" title="You are here: 19:51:31 Oct 10, 2011">OCT</td>
+		<td class="f" nowrap="nowrap">
+		
+		    <a href="https://web.archive.org/web/20111129190927/http://www.ubnt.com/wiki/RouterStation_OpenWRT_SW_Setup_Guide" title="29 Nov 2011"><strong>NOV</strong></a>
+		
+                </td>
+	    </tr>
+           <!-- NEXT/PREV CAPTURE NAV AND DAY OF MONTH INDICATOR -->
+           <tr class="d">
+               <td class="b" nowrap="nowrap">
+               
+                   <a href="https://web.archive.org/web/20110929173103/http://www.ubnt.com/wiki/RouterStation_OpenWRT_SW_Setup_Guide" title="17:31:03 Sep 29, 2011"><img src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/wm_tb_prv_on.png" alt="Previous capture" border="0" height="16" width="14"></a>
+               
+               </td>
+               <td class="c" id="displayDayEl" style="width:34px;font-size:24px;" title="You are here: 19:51:31 Oct 10, 2011">10</td>
+	       <td class="f" nowrap="nowrap">
+               
+		   <a href="https://web.archive.org/web/20111030070708/http://www.ubnt.com/wiki/RouterStation_OpenWRT_SW_Setup_Guide" title="7:07:08 Oct 30, 2011"><img src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/wm_tb_nxt_on.png" alt="Next capture" border="0" height="16" width="14"></a>
+	       
+	       </td>
+           </tr>
+           <!-- NEXT/PREV YEAR NAV AND YEAR INDICATOR -->
+           <tr class="y">
+	       <td class="b" nowrap="nowrap">
+               
+                   <a href="https://web.archive.org/web/20100714154304/http://www.ubnt.com/wiki/RouterStation_OpenWRT_SW_Setup_Guide" title="14 Jul 2010"><strong>2010</strong></a>
+               
+               </td>
+               <td class="c" id="displayYearEl" title="You are here: 19:51:31 Oct 10, 2011">2011</td>
+	       <td class="f" nowrap="nowrap">
+               
+	           <a href="https://web.archive.org/web/20130326183659/http://www.ubnt.com/wiki/RouterStation_OpenWRT_SW_Setup_Guide" title="26 Mar 2013"><strong>2013</strong></a>
+	       
+	       </td>
+           </tr>
+           </tbody></table>
+       </td>
+       </tr>
+       <tr>
+       <td class="s">
+           <a class="t" href="https://web.archive.org/web/20111010195131*/http://www.ubnt.com/wiki/RouterStation_OpenWRT_SW_Setup_Guide" title="See a list of every capture for this URL">24 captures</a>
+           <div class="r" title="Timespan for captures of this URL">14 Jul 10 - 17 Oct 15</div>
+       </td>
+       <td class="k">
+       <a href="" id="wm-graph-anchor">
+       <div id="wm-ipp-sparkline" title="Explore captures for this URL">
+	 <img id="sparklineImgId" alt="sparklines" onmouseover="__wm.st(1)" onmouseout="__wm.st(0)" onmousemove="__wm.mv(event,this)" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/graph.png" border="0" height="27" width="525">
+       <div style="display: none; width: 25px; height: 27px;" class="yt"></div><div style="display: none; width: 2px; height: 27px;" class="mt"></div></div>
+       </a>
+       </td>
+       </tr></tbody></table>
+   </td>
+   <td class="r">
+       <a href="#close" onclick="__wm.h();return false;" style="background-image:url(/static/images/toolbar/wm_tb_close.png);top:5px;" title="Close the toolbar">Close</a>
+       <a href="http://faq.web.archive.org/" style="background-image:url(/static/images/toolbar/wm_tb_help.png);bottom:5px;" title="Get some help using the Wayback Machine">Help</a>
+   </td>
+   </tr></tbody></table>
+</div>
+</div>
+</div>
+
+
+<!-- BEGIN WAYBACK TOOLBAR INSERT -->
+<script type="text/javascript" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/disclaim-element.js"></script>
+<script type="text/javascript" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/graph-calc.js"></script>
+<script type="text/javascript">//<![CDATA[
+var __wm = (function(imgWidth,imgHeight,yearImgWidth,monthImgWidth){
+var wbPrefix = "/web/";
+var wbCurrentUrl = "http://www.ubnt.com/wiki/RouterStation_OpenWRT_SW_Setup_Guide";
+
+var firstYear = 1996;
+var displayDay = "10";
+var displayMonth = "Oct";
+var displayYear = "2011";
+var prettyMonths = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+var $D=document,$=function(n){return document.getElementById(n)};
+var trackerVal,curYear = -1,curMonth = -1;
+var yearTracker,monthTracker;
+function showTrackers(val) {
+  if (val===trackerVal) return;
+  var $ipp=$("wm-ipp");
+  var $y=$("displayYearEl"),$m=$("displayMonthEl"),$d=$("displayDayEl");
+  if (val) {
+    $ipp.className="hi";
+  } else {
+    $ipp.className="";
+    $y.innerHTML=displayYear;$m.innerHTML=displayMonth;$d.innerHTML=displayDay;
+  }
+  yearTracker.style.display=val?"inline":"none";
+  monthTracker.style.display=val?"inline":"none";
+  trackerVal = val;
+}
+function trackMouseMove(event,element) {
+  var eventX = getEventX(event);
+  var elementX = getElementX(element);
+  var xOff = Math.min(Math.max(0, eventX - elementX),imgWidth);
+  var monthOff = xOff % yearImgWidth;
+
+  var year = Math.floor(xOff / yearImgWidth);
+  var monthOfYear = Math.min(11,Math.floor(monthOff / monthImgWidth));
+  // 1 extra border pixel at the left edge of the year:
+  var month = (year * 12) + monthOfYear;
+  var day = monthOff % 2==1?15:1;
+  var dateString = zeroPad(year + firstYear) + zeroPad(monthOfYear+1,2) +
+    zeroPad(day,2) + "000000";
+
+  $("displayYearEl").innerHTML=year+firstYear;
+  $("displayMonthEl").innerHTML=prettyMonths[monthOfYear];
+  // looks too jarring when it changes..
+  //$("displayDayEl").innerHTML=zeroPad(day,2);
+  var url = wbPrefix + dateString + '/' +  wbCurrentUrl;
+  $("wm-graph-anchor").href=url;
+
+  if(curYear != year) {
+    var yrOff = year * yearImgWidth;
+    yearTracker.style.left = yrOff + "px";
+    curYear = year;
+  }
+  if(curMonth != month) {
+    var mtOff = year + (month * monthImgWidth) + 1;
+    monthTracker.style.left = mtOff + "px";
+    curMonth = month;
+  }
+}
+function hideToolbar() {
+  $("wm-ipp").style.display="none";
+}
+function bootstrap() {
+  var $spk=$("wm-ipp-sparkline");
+  yearTracker=$D.createElement('div');
+  yearTracker.className='yt';
+  with(yearTracker.style){
+    display='none';width=yearImgWidth+"px";height=imgHeight+"px";
+  }
+  monthTracker=$D.createElement('div');
+  monthTracker.className='mt';
+  with(monthTracker.style){
+    display='none';width=monthImgWidth+"px";height=imgHeight+"px";
+  }
+  $spk.appendChild(yearTracker);
+  $spk.appendChild(monthTracker);
+
+  var $ipp=$("wm-ipp");
+  $ipp&&disclaimElement($ipp);
+}
+return{st:showTrackers,mv:trackMouseMove,h:hideToolbar,bt:bootstrap};
+})(525, 27, 25, 2);//]]>
+</script>
+<style type="text/css">
+body {
+  margin-top:0 !important;
+  padding-top:0 !important;
+  min-width:800px !important;
+}
+</style>
+
+<script type="text/javascript">__wm.bt();</script>
+<!-- END WAYBACK TOOLBAR INSERT -->
+
+
+<!-- ##### gumax-wrapper ##### -->
+<div id="gumax-wrapper">
+
+<!-- ===== gumax-page ===== -->
+<div class="gumax-page">
+
+	<!-- ///// gumax-header ///// -->
+	<div id="WikiHeader">
+		<a name="top" id="contentTop"></a>
+
+			<!-- gumax-p-logo -->
+	<h1 id="WikiLogo">
+			<a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/Main_Page" title="Main Page"></a>
+	</h1>
+	<!-- end of gumax-p-logo -->
+  
+        <!-- Login -->
+    <div id="gumax-p-login">
+      <ul>
+  			  			        	          <li id="pt-login" class="last">
+                    
+          	<a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/w/index.php?title=Special:UserLogin&amp;returnto=RouterStation_OpenWRT_SW_Setup_Guide" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in / create account</a></li>
+  
+ 		 		      </ul>
+    </div>
+    <!-- end of Login -->
+		    
+    		<!-- Navigation Menu -->
+		<div id="MainNavigation">
+		<h5>Navigation</h5>						<ul>
+							                  <li id="n-mainpage" class="first ">
+									<a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/Main_Page" title="Visit the main page">Main Page</a>
+                  </li>
+									                  <li id="n-portal" class="">
+									<a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/Ubiquiti_Wiki:Community_Portal" title="About the project, what you can do, where to find things">Community portal</a>
+                  </li>
+									                  <li id="n-currentevents" class="">
+									<a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/Ubiquiti_Wiki:Current_events" title="Find background information on current events">Current events</a>
+                  </li>
+									                  <li id="n-recentchanges" class="">
+									<a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/Special:RecentChanges" title="The list of recent changes in the wiki [r]" accesskey="r">Recent changes</a>
+                  </li>
+									                  <li id="n-randompage" class="">
+									<a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a>
+                  </li>
+									                  <li id="n-help" class="">
+									<a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/Help:Contents" title="The place to find out">Help</a>
+                  </li>
+															</ul>
+								</div>
+		<!-- end of Navigation Menu -->
+			</div>
+	<!-- ///// end of gumax-header ///// -->
+  
+ 		<!-- Search -->
+	<div id="Search">
+		<h5><label for="searchInput">Search the Wiki</label></h5>
+    <form action="/web/20111010195131/http://www.ubnt.com/wiki/Special:Search" id="searchform">
+      <input id="searchInput" name="search" accesskey="f" type="text">
+      <input name="go" class="Button" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists" type="submit">
+      <input name="fulltext" class="Button" id="mw-searchButton" value="Search" title="Search the pages for this text" type="submit">
+    </form>
+	</div>
+	<!-- end of Search -->
+
+		<!-- gumax-content-actions -->
+		<div id="gumax-content-actions">
+		<ul>
+
+			 <li id="ca-nstab-main" class="selected"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/RouterStation_OpenWRT_SW_Setup_Guide" title="View the content page [c]" accesskey="c">Page</a></li>
+			 <li id="ca-talk" class="new"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/w/index.php?title=Talk:RouterStation_OpenWRT_SW_Setup_Guide&amp;action=edit&amp;redlink=1" title="Discussion about the content page [t]" accesskey="t">Discussion</a></li>
+			 <li id="ca-viewsource"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/w/index.php?title=RouterStation_OpenWRT_SW_Setup_Guide&amp;action=edit" title="This page is protected.
+You can view its source [e]" accesskey="e">View source</a></li>
+			 <li id="ca-history"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/w/index.php?title=RouterStation_OpenWRT_SW_Setup_Guide&amp;action=history" title="Past revisions of this page [h]" accesskey="h">History</a></li>		</ul>
+		<div class="gumax-message">modified on 5 December 2009 at 23:46 ••• 41,497 views</div>
+	</div>
+		<!-- end of gumax-content-actions -->
+
+		<!-- gumax-content-body -->
+		<div id="gumax-column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading gumax-firstHeading">RouterStation OpenWRT SW Setup Guide</h1>
+		<div id="bodyContent" class="gumax-bodyContent">
+			<h3 id="siteSub">From Ubiquiti Wiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<table id="toc" class="toc" summary="Contents"><tbody><tr><td><div id="toctitle"><h2>Contents</h2> <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1"><a href="#Overview"><span class="tocnumber">1</span> <span class="toctext">Overview</span></a></li>
+<li class="toclevel-1"><a href="#Preparation"><span class="tocnumber">2</span> <span class="toctext">Preparation</span></a></li>
+<li class="toclevel-1"><a href="#Connecting_to_RouterStation"><span class="tocnumber">3</span> <span class="toctext">Connecting to RouterStation</span></a></li>
+<li class="toclevel-1"><a href="#Configuration"><span class="tocnumber">4</span> <span class="toctext">Configuration</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Identification"><span class="tocnumber">4.1</span> <span class="toctext">Identification</span></a></li>
+<li class="toclevel-2"><a href="#Basic_Network_Settings"><span class="tocnumber">4.2</span> <span class="toctext">Basic Network Settings</span></a></li>
+<li class="toclevel-2"><a href="#Verification"><span class="tocnumber">4.3</span> <span class="toctext">Verification</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Access_Points"><span class="tocnumber">5</span> <span class="toctext">Access Points</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Enabling_APs"><span class="tocnumber">5.1</span> <span class="toctext">Enabling APs</span></a></li>
+<li class="toclevel-2"><a href="#Configuring_Radios"><span class="tocnumber">5.2</span> <span class="toctext">Configuring Radios</span></a></li>
+<li class="toclevel-2"><a href="#Configuring_APs"><span class="tocnumber">5.3</span> <span class="toctext">Configuring APs</span></a></li>
+<li class="toclevel-2"><a href="#Multi-BSSID_.28virtual_APs.29"><span class="tocnumber">5.4</span> <span class="toctext">Multi-BSSID (virtual APs)</span></a></li>
+<li class="toclevel-2"><a href="#Reboot"><span class="tocnumber">5.5</span> <span class="toctext">Reboot</span></a></li>
+<li class="toclevel-2"><a href="#More_Information"><span class="tocnumber">5.6</span> <span class="toctext">More Information</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#The_Overlay_File_system"><span class="tocnumber">6</span> <span class="toctext">The Overlay File system</span></a>
+<ul>
+<li class="toclevel-2"><a href="#Examination"><span class="tocnumber">6.1</span> <span class="toctext">Examination</span></a></li>
+<li class="toclevel-2"><a href="#Reverting_Overlaid_Changes"><span class="tocnumber">6.2</span> <span class="toctext">Reverting Overlaid Changes</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Live_Updates_.5Bwith_opkg.5D"><span class="tocnumber">7</span> <span class="toctext">Live Updates [with opkg]</span></a></li>
+<li class="toclevel-1"><a href="#Live_Upgrades_.5Bwith_opkg.5D"><span class="tocnumber">8</span> <span class="toctext">Live Upgrades [with opkg]</span></a></li>
+<li class="toclevel-1"><a href="#Tips_for_Live_Upgrades_and_Updates"><span class="tocnumber">9</span> <span class="toctext">Tips for Live Upgrades and Updates</span></a></li>
+<li class="toclevel-1"><a href="#Installing_a_new_Firmware_Image"><span class="tocnumber">10</span> <span class="toctext">Installing a new Firmware Image</span></a></li>
+<li class="toclevel-1"><a href="#Notes_for_Users"><span class="tocnumber">11</span> <span class="toctext">Notes for Users</span></a></li>
+<li class="toclevel-1"><a href="#Notes_for_Developers"><span class="tocnumber">12</span> <span class="toctext">Notes for Developers</span></a></li>
+</ul>
+</td></tr></tbody></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Overview" id="Overview"></a><h1> <span class="mw-headline">Overview</span></h1>
+<p>This is a supplemental walkthrough of using OpenWRT "Kamikaze" on the
+ Ubiquiti RouterStation family of products.  We will explain how to turn
+ a RouterStation board into a 1-3 radio AP with 1-12 virtual access 
+points (using multi-BSSID).  All RJ45 ports will be switched and 
+connected to the LAN.  When you are done with this walkthrough you 
+should be familiar with the Kamikaze configuration files and be prepared
+ for creating more specialized configurations.
+</p>
+<a name="Preparation" id="Preparation"></a><h1> <span class="mw-headline">Preparation</span></h1>
+<p>In order to get the most out of this document, you should print out a copy of <a href="https://web.archive.org/web/20111010195131/http://downloads.openwrt.org/kamikaze/docs/openwrt.html" class="external free" title="http://downloads.openwrt.org/kamikaze/docs/openwrt.html" rel="nofollow">http://downloads.openwrt.org/kamikaze/docs/openwrt.html</a>.
+  Whenever possible, this walkthrough will not attempt to reword these 
+existing instructions.  We will focus on a specific RouterStation 
+configuration as an example to make the general instructions more 
+concrete and usable.  The general information in the docs will help you 
+understand the meaning of the options and how to customize your 
+RouterStation, and hopefully this document will be useful for some to 
+get their head around the 'blank slate' of a fresh OpenWRT installation.
+</p><p>All of section 1 of <a href="https://web.archive.org/web/20111010195131/http://downloads.openwrt.org/kamikaze/docs/openwrt.html" class="external free" title="http://downloads.openwrt.org/kamikaze/docs/openwrt.html" rel="nofollow">http://downloads.openwrt.org/kamikaze/docs/openwrt.html</a>
+ applies to the setup operations described in this document.  In 
+addition, section 2.4 includes some information on debugging that 
+includes serial and EJTAG.
+</p><p>Now, put this walkthrough aside and go skim over the first six pages of <a href="https://web.archive.org/web/20111010195131/http://downloads.openwrt.org/kamikaze/docs/openwrt.html" class="external free" title="http://downloads.openwrt.org/kamikaze/docs/openwrt.html" rel="nofollow">http://downloads.openwrt.org/kamikaze/docs/openwrt.html</a>
+ for a couple minutes.  Don't try to understand the gory details but try
+ to remember what kind of information you see and how OpenWRT tends to 
+organize configuration files, etc.  Just get a flavor for how Kamikaze 
+handles configuration and initialization.  Then, when you are ready to 
+connect your RS board, proceed to the next section.
+</p>
+<a name="Connecting_to_RouterStation" id="Connecting_to_RouterStation"></a><h1> <span class="mw-headline">Connecting to RouterStation</span></h1>
+<p>The first thing we need to do is connect to the RouterStation.  When 
+you receive your RouterStation, it has been configured to allow three 
+types of access:
+</p>
+<ol><li>  Network connections are supported using SSH version 2.  
+Default credentials are provided in the package with your board, and in 
+section 8 (no joke intended).
+</li><li> RouterStation boards allow access via the serial console at 115200 baud 8-N-1.
+<ul><li>	The six pin connector, J3, has serial lines which you can 
+connect to a level shifter/UART to the CPU.  The board runs at low 
+voltage, so you will need a level shifter that can operate from 3.3V and
+ provide level shifting to RS232 power levels (normally you should need 
+only +/- 5V for most PC's).  Minimally, this means that the logic level 1
+ is anything above 3V and 0 is anything below -3V.  
+</li><li>	Digikey (and many other online vendors) will sell "level 
+shifting" or "usb to ttl" or "usb to uart" type converters in board, 
+cable and DIP styles.  
+</li><li>	One clean solution is to order one of the FTDI parts in the 
+TTL-232R-3V3 series.  These inexpensive USB to UART parts are readily 
+available from digikey.com.   Several variations are available:
+<ul><li>	TTL-232R-3V3 (with 6-pin header)
+</li><li>	TTL-232R-3V3-WE (wire ended)
+</li><li>	TTL-232R-3V3-PCB (USB + PCB + solder pads)
+</li></ul>
+</li></ul>
+<dl><dd>The TTL-232R-3V3 header can be rewired by removing the sockets 
+from the header and reconnecting them to match the RouterStation pin 
+out.  Only three wires should be connected to the RouterStation such 
+that the six pin header now has:
+<dl><dd><dl><dd>1 - NC, 
+</dd><dd>2 - ORANGE (Signal IN/RX), 
+</dd><dd>3 - NC, 
+</dd><dd>4 - NC, 
+</dd><dd>5 - YELLOW (Signal OUT/TX), 
+</dd><dd>6 - BLACK (GROUND)
+</dd><dd>Just remember NOT to connect the +3.3V power from the USB cable
+ to the +3.3V power pin on the RouterStation.  Everybody has power, just
+ leave that pin disconnected.
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<ul><li>      Any TTL to RS232 adapter (3.3V) should suite in case RS232 port is used (instead of USB) (<a href="https://web.archive.org/web/20111010195131/http://www.tronisoft.com/4205.php" class="external autonumber" title="http://www.tronisoft.com/4205.php" rel="nofollow">[1]</a> <a href="https://web.archive.org/web/20111010195131/http://www.tildesign.nl/rs232_ttl_converter-20107101P2N" class="external autonumber" title="http://www.tildesign.nl/rs232_ttl_converter-20107101P2N" rel="nofollow">[2]</a>).
+</li></ul>
+<dl><dd>These parts are $20 or less in single unit quantities.
+</dd></dl>
+</li><li>  RouterStation ships with a simple HTML diagnostic web page installed.   If you access <a href="https://web.archive.org/web/20111010195131/http://192.168.1.20/" class="external free" title="http://192.168.1.20" rel="nofollow">http://192.168.1.20</a> you should see something like the following:
+</li></ol>
+<dl><dd><div class="floatnone"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/File:Rs_simplediagnostic.gif" class="image" title="Rs simplediagnostic.gif"><img alt="" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/Rs_simplediagnostic.gif" border="0" height="242" width="404"></a></div>
+</dd></dl>
+<dl><dd>Obviously the web page isn't much use, but once you have 
+connected your serial cable or accessed the device over SSH to 
+root@address 192.168.1.20, we are ready to begin.   Note that if you use
+ the serial port, you may see a lot of kernel logging/debug output 
+during startup.  Wait until it quiets down to start your work.  The 
+OpenWRT platform is configured to let you into a shell very quickly, 
+before startup has completed.
+</dd></dl>
+<dl><dd>Once you make it in, you should find yourself staring at the Kamikaze banner:
+</dd></dl>
+<dl><dd><div class="floatnone"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/File:Rs_kamizazebanner.gif" class="image" title="Rs kamizazebanner.gif"><img alt="" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/Rs_kamizazebanner.gif" border="0" height="314" width="628"></a></div>
+</dd></dl>
+<a name="Configuration" id="Configuration"></a><h1> <span class="mw-headline">Configuration</span></h1>
+<p>Now, that we are connected, we can make changes to the file system.  
+These changes will not overwrite the original files, but rather, will be
+ stored as an 'overlay'.  The underlying original file system is 
+read-only, and all writes are saved in a separate area of flash as an 
+"overlay filesystem" (we will talk more about this later).  You will 
+have to use either SED or VI as these are installed by default and we do
+ not have a network connection yet, that would allow downloading.
+</p>
+<a name="Identification" id="Identification"></a><h2> <span class="mw-headline">Identification</span></h2>
+<p>Most of the configuration data we care about is in /etc/ and 
+/etc/config.  Start by editing /etc/config/system (using vi or sed) and 
+specify a hostname and timezone.
+</p>
+<div class="floatleft"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/File:Rs_config1.gif" class="image" title="Rs config1.gif"><img alt="" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/Rs_config1.gif" border="0" height="225" width="245"></a></div>
+<div class="floatnone"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/File:Rs_config2.gif" class="image" title="Rs config2.gif"><img alt="" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/Rs_config2.gif" border="0" height="225" width="245"></a></div>
+<a name="Basic_Network_Settings" id="Basic_Network_Settings"></a><h2> <span class="mw-headline">Basic Network Settings</span></h2>
+<p>In order for the network access on the RouterStation to work, we need
+ to add a default gateway to route any non-local traffic through.  While
+ we are at it, we should change the IP address from the default - so we 
+won't conflict with the next device plugged in.  
+</p><p>Edit the file, /etc/config/network.  The file should start out looking like this:
+</p>
+<div class="floatnone"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/File:Rs_config3.gif" class="image" title="Rs config3.gif"><img alt="" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/Rs_config3.gif" border="0" height="297" width="324"></a></div>
+<p><br>
+We want to add gateway and dns options under the "lan" network configuration section so we can reach the internet.   
+</p><p>If your gateway and DNS were both 192.168.1.1,  then your file would now look like this:
+</p>
+<div class="floatnone"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/File:Rs_config4.gif" class="image" title="Rs config4.gif"><img alt="" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/Rs_config4.gif" border="0" height="297" width="339"></a></div>
+<p><br>
+Finally, let's change the IP address so that we do not conflict with other new boards plugged into the same network.   
+Change option ipaddr and option netmask as necessary.  
+</p><p>If you were going to change the IP address to 192.168.1.41/24 then this is what your network configuration would now look like:
+</p>
+<div class="floatnone"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/File:Rs_config5.gif" class="image" title="Rs config5.gif"><img alt="" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/Rs_config5.gif" border="0" height="297" width="339"></a></div>
+<a name="Verification" id="Verification"></a><h2> <span class="mw-headline">Verification</span></h2>
+<p>To get these changes to take effect, you must reboot the device.  Use the "reboot" command.
+</p><p>Once the system has restarted, ping your gateway.  This will prove you have your internal network settings configured correctly.
+</p>
+<div class="floatnone"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/File:Rs_config6.gif" class="image" title="Rs config6.gif"><img alt="" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/Rs_config6.gif" border="0" height="208" width="521"></a></div>
+<p><br>
+Now make sure you can ping an external address by name, proving your DNS
+ and your gateway are working together correctly, to connect you to the 
+outside world.
+</p>
+<div class="floatnone"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/File:Rs_config7.gif" class="image" title="Rs config7.gif"><img alt="" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/Rs_config7.gif" border="0" height="154" width="553"></a></div>
+<a name="Access_Points" id="Access_Points"></a><h1> <span class="mw-headline">Access Points</span></h1>
+<p>Access point configuration is stored in the file 
+/etc/config/wireless.  Power off the RouterStation, insert some Ubiquiti
+ 802.11a/b/g card(s), and power the device back up.  The 
+/etc/config/wireless file will now contain configuration sections for 
+each radio it has found.  For security reasons, these new AP 
+configurations are always disabled by OpenWRT by default.  This prevents
+ someone using a settings reset (sometimes called "factory reset" or 
+hard reset) to gain access to your network.    The file should initially
+ look something like this:
+</p>
+<div class="floatnone"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/File:Rs_ap1.gif" class="image" title="Rs ap1.gif"><img alt="" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/Rs_ap1.gif" border="0" height="252" width="425"></a></div>
+<p><br>
+There will be one wifi-device and one wifi-iface for each card you have inserted.
+</p>
+<a name="Enabling_APs" id="Enabling_APs"></a><h2> <span class="mw-headline">Enabling APs</span></h2>
+<p>To enable the AP, remove the "option disabled" lines and the "REMOVE THIS LINE" comment.
+</p>
+<a name="Configuring_Radios" id="Configuring_Radios"></a><h2> <span class="mw-headline">Configuring Radios</span></h2>
+<p>Each radio can have a channel restriction (option channel), country 
+code (option country), distance (option distance), and a mode 
+restriction (see option agmode).
+</p>
+<dl><dt>option channel</dt><dd>Optionally specify the channel of operation for the AP.
+</dd><dt>option country</dt><dd>Optionally specify the country of operation for the AP (us, uk, fr, de, etc.).
+</dd><dt>option distance</dt><dd>Optionally specify the distance between the AP and the farthest supported station (for setting ack timeouts).
+</dd><dt>option agmode</dt><dd>Optionally set the mode for the card.  Choices are: 11b, 11g, 11a, and 11bg.
+</dd></dl>
+<a name="Configuring_APs" id="Configuring_APs"></a><h2> <span class="mw-headline">Configuring APs</span></h2>
+<dl><dt>option ssid</dt><dd>You will probably want to change the SSID's,
+ here's a command for that (assuming you want the same SSID on each 
+virtual AP): command is missing, this needs to be filled in.
+</dd><dt>option network</dt><dd>Having the "option network" set to LAN 
+means that users on the wireless device will be connected (bridged) to 
+the LAN network - as configured in /etc/config/network (e.g. If option 
+network is "lan", then Atheros devices would be added to "br-lan".) .
+</dd><dt>option encryption</dt><dd>You can choose none, wep, psk, psk2, 
+wpa, or wpa2 for encryption.  "psk" and "wpa" are WPA1.  "psk2" and 
+"wpa2" are WPA2.  If you select wpa or wpa2, then you must also 
+configure the RADIUS server (option server), port (option port), and 
+shared secret (option key).
+</dd><dt>option key, key1, key2, key3, key4</dt><dd>This option applies 
+if you have selected encryption.  The key will be the WEP key ("wep" 
+encryption, WPA key ("psk" or "psk2" encryption) or RADIUS shared secret
+ ("wpa" or "wpa2" encryption).
+</dd><dt>option server and option port</dt><dd>If you have selected 
+"wpa" or "wpa2" as your encryption means then you must enter the server 
+IP address and port by adding "option server &lt;ip address&gt;", 
+"option port &lt;port&gt;" entries.
+</dd></dl>
+<a name="Multi-BSSID_.28virtual_APs.29" id="Multi-BSSID_.28virtual_APs.29"></a><h2> <span class="mw-headline">Multi-BSSID (virtual APs)</span></h2>
+<p>To create more than one AP (you can have up to four per radio), copy 
+the "config wifi-iface" section until you have from 0-4 APs defined per 
+radio.  
+</p><p>Assuming we wanted to create a three-sector AP with the same SSID
+ for each sector, "ACME" then we might end up with a configuration 
+containing three pairs of sections.  Each section would have a radio on a
+ different non-overlapping channel.
+</p><p>Each AP setup should look more or less like this:
+</p>
+<div class="floatnone"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/File:Rs_ap2.gif" class="image" title="Rs ap2.gif"><img alt="" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/Rs_ap2.gif" border="0" height="147" width="271"></a></div>
+<a name="Reboot" id="Reboot"></a><h2> <span class="mw-headline">Reboot</span></h2>
+<p>Again, you will need to reboot for these options to take effect.  Upon reboot, your APs will be up and running.
+</p>
+<a name="More_Information" id="More_Information"></a><h2> <span class="mw-headline">More Information</span></h2>
+<p>Full details on all available options are in the manual for Kamikaze.  See <a href="https://web.archive.org/web/20111010195131/http://downloads.openwrt.org/kamikaze/docs/openwrt.html" class="external free" title="http://downloads.openwrt.org/kamikaze/docs/openwrt.html" rel="nofollow">http://downloads.openwrt.org/kamikaze/docs/openwrt.html</a> for the full documentation on the options.  Fairly complete control over routing/bridging/firewalling/QOS settings is provided.
+</p>
+<a name="The_Overlay_File_system" id="The_Overlay_File_system"></a><h1> <span class="mw-headline">The Overlay File system</span></h1>
+<a name="Examination" id="Examination"></a><h2> <span class="mw-headline">Examination</span></h2>
+<p>Now, we have modified a couple of files in previous steps, so let's 
+look at the overlay files.  By default these are in /jffs (a JFFS2 file 
+system, by the way).  You can use the command "find /jffs -type f" and 
+you should see something like the following:
+</p>
+<div class="floatnone"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/File:Rs_overlay1.gif" class="image" title="Rs overlay1.gif"><img alt="" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/Rs_overlay1.gif" border="0" height="146" width="425"></a></div>
+<p><br>
+From this, you can see that we have changed a few files.  We just 
+changed network and system in this example sequence.  The startup 
+scripts also changed wireless, dropbear keys, and httpd, by the way, and
+ I was playing with the USB storage hotplug script.
+</p>
+<a name="Reverting_Overlaid_Changes" id="Reverting_Overlaid_Changes"></a><h2> <span class="mw-headline">Reverting Overlaid Changes</span></h2>
+<p>If we want to undo one of these changes, we must perform this in two 
+steps.  I will assume the file is 'important' and should not be replaced
+ until a reboot.  To have it not overwritten, you can delete the 
+modified copy UNDER /jffs (OR you can delete the file in the real 
+original location, and mini-fo will delete both).  However, we now have a
+ record in mini-fo that we deleted the file to take care of.  The 
+metadata looks like this for a deleted file:
+</p>
+<div class="floatnone"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/File:Rs_overlay2.gif" class="image" title="Rs overlay2.gif"><img alt="" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/Rs_overlay2.gif" border="0" height="42" width="628"></a></div>
+<p><br>
+If we edit that file and remove the line recording "D" for delete, and reboot, the file comes back.
+</p>
+<a name="Live_Updates_.5Bwith_opkg.5D" id="Live_Updates_.5Bwith_opkg.5D"></a><h1> <span class="mw-headline">Live Updates [with opkg]</span></h1>
+<p>Now that the network is working, you can hopefully update the 
+packager's information, assuming access to the Internet.  Use "opkg 
+update" and it should download updated package lists.
+</p>
+<div class="floatnone"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/File:Rs_updates1.gif" class="image" title="Rs updates1.gif"><img alt="" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/Rs_updates1.gif" border="0" height="70" width="628"></a></div>
+<a name="Live_Upgrades_.5Bwith_opkg.5D" id="Live_Upgrades_.5Bwith_opkg.5D"></a><h1> <span class="mw-headline">Live Upgrades [with opkg]</span></h1>
+<p>You can upgrade the system with "opkg update" followed by "opkg 
+upgrade".  For each configuration file you have modified it will give 
+you the following prompt:
+</p>
+<div class="floatnone"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/File:Rs_upgrades1.gif" class="image" title="Rs upgrades1.gif"><img alt="" src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/Rs_upgrades1.gif" border="0" height="87" width="628"></a></div>
+<p><br>
+You'll know what is right in your situation, but "diff is installed" so I
+ recommend you use that and make sure you know what you are getting 
+before you choose.
+</p><p><br>
+See <a href="https://web.archive.org/web/20111010195131/http://wiki.openwrt.org/OpenWrtDocs/Using" class="external free" title="http://wiki.openwrt.org/OpenWrtDocs/Using" rel="nofollow">http://wiki.openwrt.org/OpenWrtDocs/Using</a> for details on the effects of upgrade.
+</p><p>From section 2.4 of that document, "Upgrading OpenWrt completely
+replaces the filesystem. This means that your previous password and
+ssh keys will be erased and you will have to set your password again."
+This also means it will revert to default OpenWRT behavior (again see
+<a href="https://web.archive.org/web/20111010195131/http://wiki.openwrt.org/OpenWrtDocs/Using" class="external free" title="http://wiki.openwrt.org/OpenWrtDocs/Using" rel="nofollow">http://wiki.openwrt.org/OpenWrtDocs/Using</a> page).  By default they have
+no root password and you have to login over telnet.
+</p><p>If you want to keep your password, use the passwd command.  This will
+save the change to the mini-fo overlay filesystem and it will persist
+across the upgrade.  If you have changed your password (and you
+should) then your password will still be present after the upgrade,
+though you might have to login via telnet.  You can then decide on
+telnet or ssh depending on your preference.  If you really wanted to
+keep the ubnt password, you could use "cp /etc/passwd
+/jffs/etc/passwd" to keep the existing "ubnt" password.
+</p><p>WARNING: The latest OpenWRT code changed the expected board ID from
+what our boot loader emits by default.  In order for your board to be
+recognized as a RS board you must change the boot script in RedBoot so
+that exec has the following arguments: exec -c "board=UBNT-RS" - this
+will make it work with OpenWRT trunk/head revision (but not with the
+root file system RS ships with).  (Unfortunately, the name was changed
+in OpenWRT trunk after the RS firmware went to manufacturing.  If you
+are rebuilding the firmware yourself, you can add support for the
+actual board name returned by our boot loader fairly easily - or you
+can update your boot script.  In the future we will change "UBNT-RS"
+to be passed automatically.
+</p><p>Updating the flash image using the reset/tftp recovery option
+may reset the boot script as part of recovery - which is normally a
+good thing for de-bricking boards, but might erase your customized
+exec parameters (like hacked board ID setting for OpenWRT trunk/head).
+</p><p>As a general precaution, make sure you have a serial connection to the
+RouterStation before attempting to upgrade to the bleeding edge code
+from OpenWRT.
+</p>
+<a name="Tips_for_Live_Upgrades_and_Updates" id="Tips_for_Live_Upgrades_and_Updates"></a><h1> <span class="mw-headline">Tips for Live Upgrades and Updates</span></h1>
+<p>The only trick with upgrading to an overlay file system is that it 
+doesn't erase the old file system, it just marks things as removed.  
+Therefore, you need an awful lot of flash storage available, especially 
+while both kernels and all modules are installed.  Installing some 
+updates and additional packages will fit, of course, but if you intend 
+to "upgrade" a live system you will need to use an external media such 
+as a USB disk or an SD card.
+</p>
+<a name="Installing_a_new_Firmware_Image" id="Installing_a_new_Firmware_Image"></a><h1> <span class="mw-headline">Installing a new Firmware Image</span></h1>
+<p><b>Note: The <a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/RouterStation" title="RouterStation">RouterStation</a> and the <a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/RouterStation_Pro" title="RouterStation Pro">RouterStation Pro</a> firmware images are NOT COMPATIBLE.  Be sure you are using an image that was build for your device!!</b>
+</p><p>The ideal system is one that is tailored to meet your needs 
+precisely.  It will output a file in a format that can be understood by 
+our recovery utility in the boot loader.  Look for the image with "ubnt"
+ in the name.  Boot the system in recovery mode by holding the reset 
+switch for a few seconds while powering on the device.  You can then 
+upload the new firmware to the device using TFTP to the device on the 
+default IP address, 192.168.1.20.
+</p><p>Ubiquiti's <a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/RouterStationChallenge" title="RouterStationChallenge">RouterStation UI/Firmwire Challenge</a> resulted in three new and innovative user interfaces.  If you'd like to try one on your <a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/RouterStation" title="RouterStation">RouterStation</a> you can find images on the <a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/RouterStationChallenge" title="RouterStationChallenge">winner's pages</a>.
+</p>
+<a name="Notes_for_Users" id="Notes_for_Users"></a><h1> <span class="mw-headline">Notes for Users</span></h1>
+<dl><dt>	User Account Information
+</dt></dl>
+<ul><li>	The default username is root and the password is “ubnt”.
+</li></ul>
+<dl><dt>	Ethernet Access
+</dt></dl>
+<ul><li>	The default IP address is 192.168.1.20/255.255.255.0
+</li><li>	The boot loader (RedBoot) will *ONLY* work with the WAN port (the one marked PoE)
+</li><li>	The OpenWRT Linux build will respond on ALL ports by default, and bridges them by default.
+</li><li>	The device will look like a 4-port switch until you install 
+firewall/filtering/forwarding rules between LAN and WAN, or disable the 
+bridge entirely.
+</li><li>	The device ships configured with SSH enabled, and telnet disabled.
+</li><li>	The first Ethernet device (eth0) is WAN; the second (eth1) is the LAN switch (all three LAN ports).
+</li><li>	Ethernet Switch Security
+<ul><li>	Taking eth1 (LAN port) down will disable the CPU's MAC and 
+block traffic between the CPU and the switch, but does NOT stop the 
+switch from passing traffic between RJ45 ports 1-3.
+</li><li>	Traffic is NEVER passed between LAN and WAN by the switch chip.  
+</li><li>	If you want a bridge between LAN and WAN - you need to 
+configure one in /etc/config/network and secure it with 
+/etc/config/firewall rules.
+</li><li>	Switching between LAN ports is offloaded, and ACL/VLAN/QOS/etc are not configurable with current OpenWRT AG7100 drivers.  
+</li></ul>
+</li></ul>
+<p>(NOTE: Atheros appears to license an SDK for building managed switch applications using this AR8316 chip (unconfirmed)).
+</p>
+<dl><dt>	Serial Console Access
+</dt></dl>
+<ul><li>	On RouterStation, a six-pin header in a single row is provided for connecting a level-shifting UART.  
+<ul><li>	J3 has { pin1 - 3.3V, pin2 - S_IN, pin5 - S_OUT, pin6 - GND }
+</li><li>	The serial header has very low voltage and must be "level shifted" by another chip such as the MAX3232E.
+</li><li>	The chip must handle low power signals and turn them into something a standard PC serial port can use.
+</li><li>	If you use a USB cable/module with this level shifting UART 
+built in, just be careful not to connect both [USB and RS's J3 pin 1] 
+power sources at once!!
+</li></ul>
+</li><li> <a href="https://web.archive.org/web/20111010195131/http://wiki.ubnt.com/wiki/index.php/RouterStation_OpenWRT_SW_Setup_Guide#Connecting_to_RouterStation" class="external text" title="http://wiki.ubnt.com/wiki/index.php/RouterStation_OpenWRT_SW_Setup_Guide#Connecting_to_RouterStation" rel="nofollow">Connecting to Routerstation</a>
+</li></ul>
+<dl><dt>	EJTAG port
+</dt></dl>
+<ul><li>	The EJTAG port is a standard MIPS EJTAG connection.
+</li><li>	MIPS32/EJTAG compatible JTAG probe devices should work.
+</li><li>	UBNT (and Atheros) use the Abatron BDI 3000 for this, and it works well.
+</li><li>	Depending on when you got your RouterStation and how your JTAG
+ cable is constructed - you may need to remove a pin that is commonly 
+used to key, or ensure proper orientation of, the EJTAG connector.
+</li></ul>
+<dl><dt>USB Expansion / Compatibility
+</dt></dl>
+<ul><li> USB card readers will show up as USB devices for each card and 
+hotplug will mount the cards as /mnt/usbdrive[x].  They will be mounted 
+on startup and after insertion.
+</li><li> USB SD/SDHC cards have been tested up to 16GB.  No other card 
+types have been tested, but the USB device class is the same so it 
+should work for most readers.
+</li><li> USB memory sticks / flash drives will be mounted as /mnt/usbdrive[X]. They will be mounted on startup and after insertion.
+</li><li> USB hubs can be connected, allowing multiple storage devices, addition of audio cards, serial ports, etc..
+</li><li> We have not yet tested external IDE/SATA hard drives or CD-ROM
+ drives, but these should work as long as they are externally powered.
+</li><li> We have not yet tested USB sound cards, though the modules were enabled.
+</li></ul>
+<dl><dt>	Unbricking
+</dt></dl>
+<ul><li>	We will have a copies of the RouterStation firmware available 
+for download on our web site.  This includes the shipping versions of 
+kernel and the rootfs from the shipping RouterStation.  These will be 
+packed up in a form that can be uploaded to our the boot loader while in
+ rescue mode.
+</li><li>	Power on the board while holding down SW4.  The board will be 
+in rescue mode, waiting for a TFTP upload of the UBNT firmware file.
+</li></ul>
+<dl><dt>Mounting
+</dt></dl>
+<ul><li> You should use #3 pan-head screws for mounting the devices and 
+standoffs should have a small outside diameter or use non-metalic 
+material.
+</li></ul>
+<dl><dt>FreeBSD
+</dt></dl>
+<ul><li>If you are interested in running BSD on RouterStation, as a starting point check out <a href="https://web.archive.org/web/20111010195131/http://wiki.freebsd.org/FreeBSD/mips/UBNT-RouterStation" class="external free" title="http://wiki.freebsd.org/FreeBSD/mips/UBNT-RouterStation" rel="nofollow">http://wiki.freebsd.org/FreeBSD/mips/UBNT-RouterStation</a>
+</li></ul>
+<a name="Notes_for_Developers" id="Notes_for_Developers"></a><h1> <span class="mw-headline">Notes for Developers</span></h1>
+<dl><dt>	Documentation
+</dt></dl>
+<ul><li>	There is no publicly available source of documentation for the AR7100-series of processors, other than the OpenWRT codebase.
+</li><li>	Fortunately, OpenWRT includes a very well written and 
+maintained GPL implementation of support for the board.   Imre and Gabor
+ of OpenWRT got permission to include parts of Atheros' BSP under the 
+GPL - and have fielded a solid implementation.  
+</li></ul>
+<dl><dt>	Hacking AR7100-series SoC
+</dt></dl>
+<ul><li>	Begin your adventures in target/linux/ar71xx and look for 
+target/linux/ar71xx/files/include/asm-mips/mach-ar71xx/ar71xx.h to get 
+your bearings. 
+</li><li>	From ar71xx.h you can get the memory map, register addresses, IRQs, PLL programming, special purpose registers, etc.
+</li><li>	If you have questions beyond what you can figure out from the 
+kernel code, please post them to either the ubnt or openwrt forums and 
+we'll try to help.
+</li></ul>
+<dl><dt>	Building
+</dt></dl>
+<ul><li>	Ubiquiti will provide our current set of patches (always 
+submitted to OpenWRT, but not always accepted/merged into the OpenWRT 
+mainline yet)
+</li></ul>
+<dl><dt>	GPIO
+</dt></dl>
+<ul><li>	GPIO: AR71xx GPIO is provided by OpenWRT using sysfs.  
+</li><li>	See <a href="https://web.archive.org/web/20111010195131/http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob_plain;f=Documentation/gpio.txt;hb=HEAD" class="external free" title="http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob_plain;f=Documentation/gpio.txt;hb=HEAD" rel="nofollow">http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob_plain;f=Documentation/gpio.txt;hb=HEAD</a> for full documentation on GPIO access.  
+</li><li>	To make GPIO available from user-space, sysfs is supported.  
+The base address on RouterStation is 0 and GPIO 9-15 (7 GPIO lines) are 
+available for use in your projects.
+</li><li>	To enable all available GPIO for user-space access via sysfs: 
+for f in $(seq 9 15); do echo $f &gt;/sys/class/gpio/export; done;
+</li><li>	To reverse this, use:for f in $(seq 9 15); do echo $f &gt;/sys/class/gpio/unexport; done;
+</li><li>	Here’s an example of setting up GPIO 10 for output, initially high… sleep for a second and then set it low.
+<ul><li>	echo 10 &gt; /sys/class/gpio/export
+</li><li>	echo “high” &gt;/sys/class/gpio/gpio10/direction
+</li><li>	sleep 1
+</li><li>	echo “0” &gt;/sys/class/gpio/gpio10/value
+</li></ul>
+</li><li>    Here’s an example of setting up GPIO 9 for input, and reading the value:
+<ul><li>	echo 9 &gt; /sys/class/gpio/export
+</li><li>	echo “in” &gt;/sys/class/gpio/gpio9/direction
+</li><li>	GPIO9VALUE=$(cat /sys/class/gpio/gpio9/value)
+</li><li>	If [ ${GPIO9VALUE}  -eq 0 ]; then echo “GPIO 9 is currently high”; \
+else echo “GPIO 9 is currently low”; fi;
+</li></ul>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 33/1000000
+Post-expand include size: 0/2097152 bytes
+Template argument size: 0/2097152 bytes
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key ubiqui8_wiki2-ubntw_:pcache:idhash:133-0!1!0!!en!2!edit=0 and timestamp 20111010121125 -->
+<div class="printfooter">
+Retrieved from "<a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/RouterStation_OpenWRT_SW_Setup_Guide">http://www.ubnt.com/wiki/RouterStation_OpenWRT_SW_Setup_Guide</a>"</div>
+			<div id="catlinks" class="catlinks"><div id="mw-normal-catlinks"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/Special:Categories" title="Special:Categories">Categories</a>: <span dir="ltr"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/Category:OpenWRT" title="Category:OpenWRT">OpenWRT</a></span> | <span dir="ltr"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/Category:RouterStation" title="Category:RouterStation">RouterStation</a></span></div></div>			<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+	<!-- end of gumax-content-body -->
+	<div class="gumax-footer-spacer"></div>
+
+
+	<!-- ///// gumax-footer ///// -->
+	<div id="gumax-footer">
+
+			<!-- personal tools  -->
+	<div id="gumax-personal-tools">
+		<h5>Toolbox</h5>
+		<ul>
+				<li id="t-whatlinkshere"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/Special:WhatLinksHere/RouterStation_OpenWRT_SW_Setup_Guide" title="List of all wiki pages that link here [j]" accesskey="j">What links here</a></li>
+				<li>/</li>
+				<li id="t-recentchangeslinked"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/Special:RecentChangesLinked/RouterStation_OpenWRT_SW_Setup_Guide" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li>
+				<li>/</li>
+<li id="t-specialpages"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/Special:SpecialPages" title="List of all special pages [q]" accesskey="q">Special pages</a></li>
+				<li>/</li>
+				<li id="t-print"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/w/index.php?title=RouterStation_OpenWRT_SW_Setup_Guide&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>				<li>/</li>
+				<li id="t-permalink"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/w/index.php?title=RouterStation_OpenWRT_SW_Setup_Guide&amp;oldid=1786" title="Permanent link to this revision of the page">Permanent link</a></li>		</ul>
+	</div>
+	<!-- end of personal tools  -->
+
+			<!-- gumax-f-list -->
+	<div id="gumax-f-list">
+		<ul>
+							<li id="privacy"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/Ubiquiti_Wiki:Privacy_policy" title="Ubiquiti Wiki:Privacy policy">Privacy policy</a></li>
+							<li>/</li>							<li id="about"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/Ubiquiti_Wiki:About" title="Ubiquiti Wiki:About">About Ubiquiti Wiki</a></li>
+							<li>/</li>							<li id="disclaimer"><a href="https://web.archive.org/web/20111010195131/http://www.ubnt.com/wiki/Ubiquiti_Wiki:General_disclaimer" title="Ubiquiti Wiki:General disclaimer">Disclaimers</a></li>
+							<li>/</li>						<li id="f-poweredby"><a href="https://web.archive.org/web/20111010195131/http://mediawiki.org/" target="_blank">Powered by MediaWiki</a></li>
+		</ul>
+	</div>
+	<!-- end of gumax-f-list -->
+
+	</div>
+	<!-- ///// end of gumax-footer ///// -->
+
+
+</div>
+<!-- ===== end of gumax-page ===== -->
+
+
+	<!--[if lt IE 7]>
+		<script type="text/javascript">pngfix('td');</script>
+	<![endif]-->
+
+</div>
+<!-- ##### end of gumax-wrapper ##### -->
+
+
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "/web/20111010195131/https://ssl." : "/web/20111010195131/http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script><script src="RouterStation%20OpenWRT%20SW%20Setup%20Guide%20-%20Ubiquiti%20Wiki_files/ga.js" type="text/javascript"></script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-2432820-1");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script><!-- Served in 3.401 secs. -->
+
+
+
+
+
+
+
+
+
+
+
+
+</body></html>
+<!--
+     FILE ARCHIVED ON 19:51:31 Oct 10, 2011 AND RETRIEVED FROM THE
+     INTERNET ARCHIVE ON 16:08:45 Oct 14, 2016.
+     JAVASCRIPT APPENDED BY WAYBACK MACHINE, COPYRIGHT INTERNET ARCHIVE.
+
+     ALL OTHER CONTENT MAY ALSO BE PROTECTED BY COPYRIGHT (17 U.S.C.
+     SECTION 108(a)(3)).
+-->
